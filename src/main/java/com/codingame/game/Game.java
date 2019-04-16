@@ -42,8 +42,10 @@ public class Game {
             while(!isValidLocation(car)){
                 setRndLocation(car);
             }
+            car.angle = car.getAngle(Constants.CENTER);
 
             setOpposite(car, players.get(1).Cars.get(i));
+            players.get(1).Cars.get(i).angle = players.get(1).Cars.get(i).getAngle(Constants.CENTER);
         }
 
         Ball b = balls.get(0);
@@ -54,12 +56,11 @@ public class Game {
         setOpposite(b, balls.get(1));
     }
 
-    private void setRndLocation(Point point){
-        double angle = Constants.Random.nextDouble()*Math.PI*4;
-        int x = (int)(Math.cos(angle)*4000);
-        int y = (int)(Math.sin(angle)*4000);
-        point.x = x;
-        point.y = y;
+    private void setRndLocation(Unit point){
+        double angle = Math.toRadians(Math.round(Math.toDegrees(Constants.Random.nextDouble()*Math.PI*2)));
+        point.x = (int)(Math.cos(angle)*4000);
+        point.y = (int)(Math.sin(angle)*4000);
+        point.adjust();
     }
 
     private void setOpposite(Point point, Point target){

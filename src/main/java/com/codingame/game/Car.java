@@ -2,7 +2,7 @@ package com.codingame.game;
 
 public class Car extends Unit {
     public Player player;
-    public Double angle = null;
+    public Double angle;
     public Ball ball;
     public String message;
 
@@ -12,8 +12,6 @@ public class Car extends Unit {
         this.radius = Constants.CAR_RADIUS;
         this.player = player;
         this.friction = Constants.CAR_FRICTION;
-
-        this.angle = null;
     }
 
     public void handleExpertInput(int angle, int thrust){

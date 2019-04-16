@@ -46,7 +46,6 @@ public class Agent1 {
                 System.out.println(target.X + " " + target.Y + " " + thrust + " MESSAGE YO!?");
             }
 
-            System.out.println("EXPERT 18 200 EXPERT input");
         }
     }
 

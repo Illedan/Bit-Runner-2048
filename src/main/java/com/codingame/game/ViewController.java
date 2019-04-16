@@ -133,12 +133,11 @@ public class ViewController {
                                 .setTint(color)
                                 .setLoop(false)
                                 .setScale(scale)
-
                                 .setAnchor(0.5);
                         playFieldGroup.add(anim);
-
+                        graphicEntityModule.commitEntityState(0.0, playFieldGroup, anim);
                         anim.play();
-                        graphicEntityModule.commitEntityState(Math.min(1.0, col.time), playFieldGroup, anim);
+                        graphicEntityModule.commitEntityState(Math.min(1.0, col.time), anim);
                     }
                 }
             }
@@ -268,6 +267,7 @@ public class ViewController {
                     .setY(getScaled(model.y))
                     .setLineColor(player.getColorToken())
                     .setLineAlpha(0.1)
+                    .setAlpha(0.5)
                     .setLineWidth(5).setVisible(false));
             debugModule.addItem(previousLocation.getId());
 
