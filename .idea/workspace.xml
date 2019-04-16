@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66a47f06-a862-4517-8b44-e1e11b160f04" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/config/stub.txt" afterPath="$PROJECT_DIR$/config/stub.txt" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,11 +48,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="stub.txt" pinned="false" current-in-tab="true">
+      <file leaf-file-name="stub.txt" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/stub.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="339">
-              <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+            <state relative-caret-position="309">
+              <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -90,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="168" column="34" lean-forward="false" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
+            <state relative-caret-position="180">
+              <caret line="390" column="16" lean-forward="false" selection-start-line="390" selection-start-column="16" selection-end-line="390" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -103,8 +103,8 @@
       <file leaf-file-name="workspace.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="211">
-              <caret line="557" column="75" lean-forward="false" selection-start-line="557" selection-start-column="75" selection-end-line="557" selection-end-column="75" />
+            <state relative-caret-position="226">
+              <caret line="558" column="75" lean-forward="false" selection-start-line="558" selection-start-column="75" selection-end-line="558" selection-end-column="75" />
               <folding />
             </state>
           </provider>
@@ -141,9 +141,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/resources/view/config.js" />
         <option value="$PROJECT_DIR$/config/config.ini" />
-        <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/config/stub.txt" />
+        <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" />
       </list>
     </option>
   </component>
@@ -806,8 +806,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="557" column="75" lean-forward="false" selection-start-line="557" selection-start-column="75" selection-end-line="557" selection-end-column="75" />
+        <state relative-caret-position="226">
+          <caret line="558" column="75" lean-forward="false" selection-start-line="558" selection-start-column="75" selection-end-line="558" selection-end-column="75" />
           <folding />
         </state>
       </provider>
@@ -842,18 +842,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java">
+    <entry file="file://$PROJECT_DIR$/config/stub.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="168" column="34" lean-forward="false" selection-start-line="168" selection-start-column="34" selection-end-line="168" selection-end-column="34" />
+        <state relative-caret-position="309">
+          <caret line="25" column="34" lean-forward="true" selection-start-line="25" selection-start-column="34" selection-end-line="25" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/stub.txt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="339">
-          <caret line="27" column="41" lean-forward="true" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
+        <state relative-caret-position="180">
+          <caret line="390" column="16" lean-forward="false" selection-start-line="390" selection-start-column="16" selection-end-line="390" selection-end-column="16" />
           <folding />
         </state>
       </provider>

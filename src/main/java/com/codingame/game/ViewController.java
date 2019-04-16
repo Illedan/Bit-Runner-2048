@@ -387,7 +387,8 @@ public class ViewController {
             params.put("carY", model.y);
             params.put("Vx", model.vx);
             params.put("Vy", model.vy);
-            params.put("Angle", Math.toDegrees(model.angle));
+            if(model.angle != null)
+                params.put("Angle", Math.toDegrees(model.angle));
             if(model.ball != null){
                 params.put("BallId", model.ball.id);
             }
