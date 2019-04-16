@@ -50,7 +50,7 @@
                 <const>100</const> units.
                 <br> At the start of a game, Prisoners are placed <strong>randomly</strong> across the map.
                 <br> A game always starts with <const>2</const> Prisoners.
-                <br> Players must capture them to!
+                <br> Players must capture them to score points!
                 <br> Prisoners roll on the playing field and are not subject to friction.
                 <br>
                 <br>
@@ -59,12 +59,12 @@
                 <var>carCount</var> cars.
                 <br> A Car is a disc with a radius of
                 <const>400</const> units. 
-                <br> <strong>Cars have a magnetic ability, which seize control of Prisoners when the distance between them is lower than the Car's radius.</strong>
+                <br> <strong>Cars generate a magnetic field, which seizes control of prisoners' escape pods when the distance between them is lower than the Car's radius.</strong>
                 <br> Cars glide on the playing field and are subject to friction.
                 <br>
                 <br>
                 <p style="text-align:center"><strong>Game mechanics</strong></p>
-                <strong>To capture a prisoner</strong>, a Player must deliver him to the man hole.
+                <strong>To capture a prisoner</strong>, a Player must drop him into the man hole.
                 <br> A new Prisoner will be trying to escape on the edge of prison yard. <const>2</const> Prisoners are always around trying to escape.
                 <br>
                 <br>
@@ -126,7 +126,7 @@
             <ul style="margin: 0;">
                 <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
                 <li>To deliver a Prisoner, the Car must have grabbed a Prisoner and the distance between the man hole and the Car and the center of the man hole must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
-                <li>Collisions are (nearly) elastic. For technical reasons, a minimal impulse of
+                <li>Collisions are (nearly) elastic. A minimal impulse of
                     <const>120</const> is applied for Car-Carcollisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Border collisions</li>
                 <li>Cars have a mass of <const>1</const> unit.
                 </li>
@@ -229,9 +229,13 @@
             <div class="text">
                 <const>0</const> <= <var>thrust</var> <= <const>200</const>
                 <br> <var>entityId</var> >= <const>0</const>
+                <br><const>4000</const> <= <var>mapRadius</var> <= <const>6000</const>
+                <br><const>500</const> <= <var>centerRadius</var> <= <const>1000</const>
+                <br><const>250</const> <= <var>minSwapImpulse</var> <= <const>350</const>     
                 <br> Response time for the first turn ≤ <const>1000</const> ms
                 <br> Response time per turn ≤ <const>50</const> ms
                 <br>
+                <br> <i>Note that the current referee uses a lower range of mapRadius, centerRadius and minSwapImpulse values than stated above. Creators of the puzzle reserve the right to update the referee with new numerical values, insofar as they remain within the bounds provided in this statement.</i>
             </div>
         </div>
     </div>
