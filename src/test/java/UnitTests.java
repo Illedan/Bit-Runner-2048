@@ -245,7 +245,7 @@ public class UnitTests {
         c.y = y;
         c.vx = vx;
         c.vy = vy;
-        c.angle = null;
+        c.angle = 0;
     }
 
     private void setupCar(int player, int car, String s){
@@ -257,7 +257,7 @@ public class UnitTests {
         c.y = Integer.parseInt(splitted[1]);
         c.vx = Integer.parseInt(splitted[2]);
         c.vy = Integer.parseInt(splitted[3]);
-        c.angle = null;
+        c.angle = 0;
     }
 
     private boolean assertCars(Car a, Car b){

@@ -2,7 +2,7 @@ package com.codingame.game;
 
 public class Car extends Unit {
     public Player player;
-    public Double angle;
+    public double angle;
     public Ball ball;
     public String message;
 
@@ -15,21 +15,13 @@ public class Car extends Unit {
     }
 
     public void handleExpertInput(int angle, int thrust){
-        if(this.angle==null) this.angle = 0.0;
-
         double newAngle = Math.toDegrees(this.angle) + angle;
         this.angle = Math.toRadians(newAngle);
         thrustTowardsHeading(thrust);
     }
 
     public void handleInput(int x, int y, int thrust){
-        if(angle == null){
-            this.thrust(new Point(x, y), thrust);
-            if(this.x != x || this.y != y)
-                this.angle = getAngle(new Point(x, y));
-            else this.angle = 0.0;
-        }
-        else if (this.x != x || this.y != y) {
+        if (this.x != x || this.y != y) {
             double angle = this.getAngle(new Point(x, y));
             double relativeAngle = shortAngleDist(this.angle, angle);
             if (Math.abs(relativeAngle) >= Constants.MAX_ROTATION_PER_TURN) {
@@ -52,12 +44,10 @@ public class Car extends Unit {
     @Override
     public void adjust() {
         super.adjust();
-        if(this.angle != null){
-            double degrees = Math.round(Math.toDegrees(angle));
-            this.angle = Math.toRadians(degrees);
-            while(this.angle > Math.PI*2) this.angle-= Math.PI*2;
-            while(this.angle < 0)this.angle+= Math.PI*2;
-        }
+        double degrees = Math.round(Math.toDegrees(angle));
+        this.angle = Math.toRadians(degrees);
+        while(this.angle > Math.PI*2) this.angle-= Math.PI*2;
+        while(this.angle < 0)this.angle+= Math.PI*2;
     }
 
     private static double shortAngleDist(double a0, double a1) {

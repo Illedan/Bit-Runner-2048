@@ -30,7 +30,6 @@ public class Game {
         int sign = -1;
         for(int i = 0; i < maxBallCount; i++){
             Ball ball = new Ball(0,0);
-            ball.thrust(new Point(targetX*sign, 0), Constants.BALL_SPAWN_SPEED);
             balls.add(ball);
             sign = 1;
             ball.adjust();
@@ -54,6 +53,11 @@ public class Game {
             setRndLocation(b);
         }
         setOpposite(b, balls.get(1));
+        b.thrust(new Point(0, 0), Constants.BALL_SPAWN_SPEED);
+        balls.get(1).thrust(new Point(0, 0), Constants.BALL_SPAWN_SPEED);
+
+        // Round positions and angles
+        onRoundEnd();
     }
 
     private void setRndLocation(Unit point){
@@ -63,9 +67,10 @@ public class Game {
         point.adjust();
     }
 
-    private void setOpposite(Point point, Point target){
+    private void setOpposite(Unit point, Unit target){
         target.x = point.x*-1;
         target.y = point.y*-1;
+        target.adjust();
     }
 
     private boolean isValidLocation(Point point){

@@ -42,8 +42,9 @@ public class Agent1 {
                 Car car = carPoses.get(i);
                 if(car.ballId != -1) target = new Car(0,0,0);
                 int thrust = 200;
+                String s = i == 0? "Illedan" : "pb4";
                 if(target.distance(car) < 500) thrust = 10;
-                System.out.println(target.X + " " + target.Y + " " + thrust + " MESSAGE YO!?");
+                System.out.println(target.X + " " + target.Y + " " + thrust + " " + s);
             }
 
         }

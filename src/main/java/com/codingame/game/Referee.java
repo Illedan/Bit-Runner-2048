@@ -188,7 +188,7 @@ public class Referee extends AbstractReferee {
     }
 
     private String createCarArgs(Car car, Player player){
-        int angle = car.angle==null?-1 :(int)Math.round(Math.toDegrees(car.angle));
+        int angle = (int)Math.round(Math.toDegrees(car.angle));
         int type = car.player==player?0:1;
         int ballId = car.ball==null?-1:car.ball.id;
         int[] inputs = {car.id, type, (int)car.x, (int)car.y, (int)car.vx, (int)car.vy, angle, ballId};

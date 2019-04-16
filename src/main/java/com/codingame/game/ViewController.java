@@ -111,10 +111,7 @@ public class ViewController {
                 for(Unit.UnitCollision col : c.collisions){
                     if(col.targetPosition != null && col.impulse > Constants.MIN_IMPULSE){
                         int color = 0xffffff;
-                        if(col.impulse > Constants.BORDER_MIN_IMPULSE-1){
-                            color = 0x4c6cb3;
-                        }
-                        else if(col.impulse > Constants.BALL_LOSE_MIN_IMPULSE){
+                        if(col.impulse > Constants.BALL_LOSE_MIN_IMPULSE){
                             color = 0xbdb764;
                         }
                         else if(col.impulse > Constants.BALL_LOSE_MIN_IMPULSE-50){
@@ -135,7 +132,7 @@ public class ViewController {
                                 .setScale(scale)
                                 .setAnchor(0.5);
                         playFieldGroup.add(anim);
-                        graphicEntityModule.commitEntityState(0.0, playFieldGroup, anim);
+                        graphicEntityModule.commitEntityState(Math.max(0.0, Math.min(1.0, col.time)-0.0001), playFieldGroup, anim);
                         anim.play();
                         graphicEntityModule.commitEntityState(Math.min(1.0, col.time), anim);
                     }
@@ -300,6 +297,7 @@ public class ViewController {
                     .setRadius(getScaled(model.radius))
                     .setFillColor(player.getColorToken())
                     .setLineColor(player.getColorToken()).setLineWidth(2));
+            rotationGroup.setRotation(model.angle - Math.PI/2);
 
             rotationGroup.add(graphicEntityModule.createLine()
                     .setX(0)
@@ -354,7 +352,7 @@ public class ViewController {
         public void update(){
             previousLocation.setX(cargroup.getX(), Curve.IMMEDIATE).setY(cargroup.getY(), Curve.IMMEDIATE);
 
-            double angle = model.angle==null ? 0.0 : model.angle;
+            double angle = model.angle;
             if(first){
                 rotationGroup.setRotation(angle - Math.PI/2);
                 graphicEntityModule.commitEntityState(0, rotationGroup);
@@ -403,8 +401,7 @@ public class ViewController {
             params.put("carY", model.y);
             params.put("Vx", model.vx);
             params.put("Vy", model.vy);
-            if(model.angle != null)
-                params.put("Angle", Math.toDegrees(model.angle));
+            params.put("Angle", Math.toDegrees(model.angle));
             if(model.ball != null){
                 params.put("BallId", model.ball.id);
             }
