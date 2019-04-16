@@ -1,0 +1,33 @@
+read mapRadius:int
+read centerRadius:int
+read minSwapImpulse:int
+read carCount:int
+gameloop
+read myscore:int
+read enemyscore:int
+read currentWinner:int
+read entities:int
+loop entities read id:int type:int x:int y:int vx:int vy:int angle:int prisonerId:int
+loop carCount write 0 0 50 message
+
+STATEMENT
+Made by Illedan, pb4 and Agade
+
+INPUT
+minSwapImpulse: Impulse needed to steal a prisoner from another car
+carCount: the number of pucks you control
+myscore: your score
+enemyscore: the other player's score
+currentWinner: winner as score is now, in case of a tie. -1: you lose, 0: draw, 1: you win
+entities: number of entities this round
+id: the ID of this unit
+type: type of entity. 0 is your puck, 1 is enemy puck, 2 is prisoners
+x: position x relative to center 0
+y: position y relative to center 0
+vx: horizontal speed. Positive is right
+vy: vertical speed. Positive is downwards
+angle: facing angle of this puck
+prisonerId: id of carried prisoner, -1 if none
+
+OUTPUT
+X Y THRUST MESSAGE
