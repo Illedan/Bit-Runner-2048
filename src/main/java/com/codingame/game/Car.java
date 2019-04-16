@@ -16,6 +16,14 @@ public class Car extends Unit {
         this.angle = null;
     }
 
+    public void handleExpertInput(int angle, int thrust){
+        if(this.angle==null) this.angle = 0.0;
+
+        double newAngle = Math.toDegrees(this.angle) + angle;
+        this.angle = Math.toRadians(newAngle);
+        thrustTowardsHeading(thrust);
+    }
+
     public void handleInput(int x, int y, int thrust){
         if(angle == null){
             this.thrust(new Point(x, y), thrust);
@@ -30,13 +38,17 @@ public class Car extends Unit {
                 angle = this.angle + Constants.MAX_ROTATION_PER_TURN * Math.signum(relativeAngle);
             }
 
-            double vx = Math.cos(angle) * thrust;
-            double vy = Math.sin(angle) * thrust;
-
-            this.vx += vx;
-            this.vy += vy;
             this.angle = angle;
+            thrustTowardsHeading(thrust);
         }
+    }
+
+    private void thrustTowardsHeading(int thrust){
+        double vx = Math.cos(angle) * thrust;
+        double vy = Math.sin(angle) * thrust;
+
+        this.vx += vx;
+        this.vy += vy;
     }
 
     @Override

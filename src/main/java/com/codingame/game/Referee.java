@@ -68,7 +68,7 @@ public class Referee extends AbstractReferee {
             }
         }
 
-        endScreenModule.setTitleRankingsSprite("logo.png");
+        endScreenModule.setTitleRankingsSprite("splashlogo.png");
         endScreenModule.setScores(gameManager.getPlayers().stream().mapToInt(p -> p.getScore()).toArray());
     }
 
@@ -202,27 +202,59 @@ public class Referee extends AbstractReferee {
 
     private void handleInput(Car car, String input) throws Exception{
         String[] splitted = input.split(" ");
-        int x = Integer.parseInt(splitted[0]);
-        int y = Integer.parseInt(splitted[1]);
-        int thrust = Integer.parseInt(splitted[2]);
-        if(thrust < 0 || thrust > Constants.CAR_MAX_THRUST) {
-            gameManager.addToGameSummary("Invalid thrust. Please keep between 0 and " + Constants.CAR_MAX_THRUST);
-            throw new Exception( "Invalid thrust");
+
+        if(input.startsWith("EXPERT")){
+            int angle = Integer.parseInt(splitted[1]);
+            int thrust = Integer.parseInt(splitted[2]);
+            if(thrust < 0 || thrust > Constants.CAR_MAX_THRUST) {
+                gameManager.addToGameSummary("Invalid thrust. Please keep between 0 and " + Constants.CAR_MAX_THRUST);
+                throw new Exception( "Invalid thrust");
+            }
+
+            if(angle < -18 || angle > 18){
+                gameManager.addToGameSummary("Invalid angle. Please keep between -18 and 18.");
+                throw new Exception("Invalid angle");
+            }
+
+            car.handleExpertInput(angle, thrust);
+            if(splitted.length > 3){
+                int totalLength = ("EXPERT " +angle+" "+thrust+" ").length();
+                car.message = input.substring(totalLength);
+                if(car.message.contains("debug")){
+                    doDebug = true;
+                }
+
+                if(car.message.length() > 20){
+                    car.message = car.message.substring(0, 20);
+                }
+            }else{
+                car.message="";
+            }
+
         }
-
-        car.handleInput(x, y, thrust);
-        if(splitted.length > 3){
-            int totalLength = (x+" "+y+" "+thrust+" ").length();
-            car.message = input.substring(totalLength);
-            if(car.message.contains("debug")){
-                doDebug = true;
+        else{
+            int x = Integer.parseInt(splitted[0]);
+            int y = Integer.parseInt(splitted[1]);
+            int thrust = Integer.parseInt(splitted[2]);
+            if(thrust < 0 || thrust > Constants.CAR_MAX_THRUST) {
+                gameManager.addToGameSummary("Invalid thrust. Please keep between 0 and " + Constants.CAR_MAX_THRUST);
+                throw new Exception( "Invalid thrust");
             }
 
-            if(car.message.length() > 20){
-                car.message = car.message.substring(0, 20);
+            car.handleInput(x, y, thrust);
+            if(splitted.length > 3){
+                int totalLength = (x+" "+y+" "+thrust+" ").length();
+                car.message = input.substring(totalLength);
+                if(car.message.contains("debug")){
+                    doDebug = true;
+                }
+
+                if(car.message.length() > 20){
+                    car.message = car.message.substring(0, 20);
+                }
+            }else{
+                car.message="";
             }
-        }else{
-            car.message="";
         }
     }
 }

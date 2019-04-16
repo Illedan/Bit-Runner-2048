@@ -13,12 +13,10 @@ public class Player extends AbstractMultiplayerPlayer {
         return Cars.size();
     }
 
-    public void initialize(int carCount, int dx, int starty){
-        double x = 2500 * dx;
-        int playerDirection = getIndex()==0?-1:1;
+    public void initialize(int carCount){
         for(int i = 0; i < carCount; i++)
         {
-            Car newCar = new Car(this, x, (starty-i*starty*2)*playerDirection);
+            Car newCar = new Car(this, 0, 0);
             Cars.add(newCar);
         }
     }

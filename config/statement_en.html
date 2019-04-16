@@ -108,6 +108,8 @@
                     <div class="title">Lose Conditions</div>
                     <div class="text">
                         <ul>
+                            <li>Capture less prisoners than your enemy.</li>
+                            <li>Capture your last prisoners last, in case of a draw</li>
                             <li>Your program does not provide output in time.</li>
                             <li>Your program provides invalid output.</li>
                         </ul>
@@ -124,6 +126,7 @@
         </h1>
         <div class="statement-expert-rules-content">
             <ul style="margin: 0;">
+                <li><strong>Referee:</strong>https://github.com/Illedan/Bit-Runner-2048</li>
                 <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
                 <li>To deliver a Prisoner, the Car must have grabbed a Prisoner and the distance between the man hole and the Car and the center of the man hole must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
                 <li>Collisions are (nearly) elastic. A minimal impulse of
@@ -164,7 +167,7 @@
                 <br>
                 <span class="statement-lineno">Line 2</span>: one integer <var>centerRadius</var>, the radius of the center.
                 <br>
-                <span class="statement-lineno">Line 3</span>: one float <var>minSwapImpulse</var>, the impulse needed to steal a ball.
+                <span class="statement-lineno">Line 3</span>: one integer <var>minSwapImpulse</var>, the impulse needed to steal a ball.
                 <br>
                 <span class="statement-lineno">Line 4</span>: one integer <var>carCount</var>, the number of Cars you control.
                 <br>
@@ -220,6 +223,9 @@
             <br> <const>-1</const>: map border
             <br> <const>0</const>: man hole
             <br> <const>other values</const>: entityId of the Car or Prisoner
+            <br>
+            <br> To drive like an expert, use: <action>EXPERT angle thrust message</action>. (Can't be used the first round.)
+            <br> <const>-18</const> <= <var>angle</var> <= <const>18</const>
             </div>
         </div>
 

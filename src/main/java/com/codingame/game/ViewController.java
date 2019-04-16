@@ -158,17 +158,18 @@ public class ViewController {
                     .setZIndex(3)
                     .setX(getScaled(X0))
                     .setY(getScaled(Y0));
-            int count = 18;
+            int count = 20;
             for(int i = 0; i < count; i++){
                 double angle = Math.PI*2/count*i;
                 Group dummy = graphicEntityModule.createGroup().setRotation(angle);
                 fenceGroup.add(dummy);
                 dummy.add(graphicEntityModule.createSpriteAnimation()
                         .setImages("Elec1.png", "Elec2.png", "Elec3.png")
-                        .setX(-215)
-                        .setY(-240)
+                        .setX(-295)
+                        .setY(-320)
                         .setDuration(250+i)
                         .setLoop(true)
+                        .setAlpha(1)
                         .setAnchor(1)
                         .play());
             }
@@ -248,6 +249,7 @@ public class ViewController {
 
     public class CarSprite extends ViewPart
     {
+        private Sprite arrow;
         private Sprite car;
         private Car model;
         private Group cargroup;
@@ -308,15 +310,27 @@ public class ViewController {
             params.put("Owner", player.getNicknameToken());
             tooltipModule.registerEntity(cargroup, params);
 
-           rotationGroup.add((this.car = graphicEntityModule.createSprite()
+           rotationGroup.add(this.car = graphicEntityModule.createSprite()
                  .setImage("car"+model.player.getIndex()+".png")
                  .setAnchor(0.5)
                  .setBaseWidth(getScaled(model.radius*2))
                  .setBaseHeight(getScaled(model.radius*1.3))
                  .setAlpha(1.0)
                  .setTint(model.player.getColorToken())
-                 .setRotation(Math.PI*0.5)));
+                 .setRotation(Math.PI*0.5));
 
+           cargroup.add(arrow = graphicEntityModule.createSprite()
+                   .setImage("Arrow.png")
+                   .setAnchorY(0.5)
+                   .setAnchorX(0)
+                   //.setBaseWidth(getScaled(model.radius*2))
+                   //.setBaseHeight(getScaled(model.radius*1.3))
+                   .setAlpha(1.0)
+                   .setScale(0.5)
+                   .setTint(0xf5ee00).setVisible(false)
+                   .setRotation(Math.PI*0.5));
+
+           debugModule.addItem(arrow.getId());
             messageModule.messageIds.add(message.getId());
 
             // ball
@@ -330,8 +344,8 @@ public class ViewController {
                     .setAlpha(0.7)
                     .play());
 
-            ballGroup.add(graphicEntityModule.createSprite().setImage("ball1.png").setScale(0.7).setAnchor(0.5).setAlpha(1));
-            Text idText = graphicEntityModule.createText(""+model.id).setFillColor(0xffffff).setAnchor(0.5).setFontSize(25).setVisible(false);
+            ballGroup.add(graphicEntityModule.createSprite().setImage("ball4.png").setScale(0.7).setAnchor(0.5).setAlpha(1));
+            Text idText = graphicEntityModule.createText(""+model.id).setFillColor(0xffffff).setStrokeColor(0x000000).setStrokeThickness(1).setAnchor(0.5).setFontSize(25).setVisible(false);
             cargroup.add(idText);
             debugModule.addItem(idText.getId());
         }
@@ -367,6 +381,8 @@ public class ViewController {
                 t = c.time;
             }
 
+            arrow.setRotation(model.getSpeedAngle(), Curve.NONE);
+            arrow.setScale(0.2+0.25*model.getSpeed()/500);
             cargroup.setX(getScaled(model.x))
                     .setY(getScaled(model.y))
                     .setZIndex((int)model.y+Constants.MAP_RADIUS); // keep message above
@@ -409,9 +425,9 @@ public class ViewController {
         public BallSprite(Ball model){
             this.model = model;
             playFieldGroup.add(ballGroup = graphicEntityModule.createGroup().setZIndex(2).setX(getScaled(model.x)).setY(getScaled(model.y)));
+            ballGroup.add(graphicEntityModule.createCircle().setRadius((int)(50*0.7/2)).setLineColor(0x000000).setLineWidth(3).setFillAlpha(0.5).setLineAlpha(0.5).setFillColor(0xffffff));
             ballGroup.add(rotationGroup = graphicEntityModule.createGroup());
-            //ballGroup.add(graphicEntityModule.createCircle().setRadius(getScaled(model.radius)+1).setLineColor(0xffffff).setLineWidth(3).setFillAlpha(0.5).setLineAlpha(0.5).setFillColor(0xffffff));
-            rotationGroup.add(ball = graphicEntityModule.createSpriteAnimation().setImages("ball1.png", "ball2.png", "ball3.png").setDuration(400).setLoop(true).setScale(0.7).setAnchor(0.5).play());
+            rotationGroup.add(ball = graphicEntityModule.createSpriteAnimation().setImages( "ball6.png", "ball5.png", "ball4.png").setDuration(400).setLoop(true).setScale(0.7).setAnchor(0.5).play());
             Map<String, Object> params = new HashMap<>();
             params.put("Id", model.id);
             tooltipModule.registerEntity(ballGroup, params);
@@ -435,7 +451,7 @@ public class ViewController {
             }
             if(!model.captured){
                 ballGroup.setX(getScaled(model.x)).setY(getScaled(model.y));
-                rotationGroup.setRotation(Math.atan2(model.vy, model.vx) - Math.PI*1.25);
+                rotationGroup.setRotation(Math.atan2(model.vy, model.vx) - Math.PI*1.5);
 
                 Map<String, Object> params = new HashMap<>();
                 params.put("ballX", model.x);

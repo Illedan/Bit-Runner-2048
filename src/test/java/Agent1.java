@@ -35,6 +35,7 @@ public class Agent1 {
                 if(type == 2)
                     balls.add(new Car(x, y, ballId));
             }
+
             Car target = new Car(0,0,0);
             if(balls.size()>0) target = balls.get(0);
             for(int i = 0; i < cars; i++){
@@ -44,6 +45,8 @@ public class Agent1 {
                 if(target.distance(car) < 500) thrust = 10;
                 System.out.println(target.X + " " + target.Y + " " + thrust + " MESSAGE YO!?");
             }
+
+            System.out.println("EXPERT 18 200 EXPERT input");
         }
     }
 

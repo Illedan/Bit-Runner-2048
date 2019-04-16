@@ -19,26 +19,66 @@ public class Game {
     public Game(int numCars, int maxBallCount, List<Player> players){
         this.players = players;
         this.center = new Center();
-        int startY = Constants.Random.nextInt(1000)-2500;
         for(Player p : players){
-            p.initialize(numCars, p.getIndex()==0?-1:1, startY);
+            p.initialize(numCars);
             for(Car c : p.Cars){
                 entities.add(c);
             }
         }
 
-        int dy = -1;
-        double spawnX = Constants.Random.nextDouble()*1000;
         double targetX = Constants.Random.nextDouble()*6000-3000;
         int sign = -1;
         for(int i = 0; i < maxBallCount; i++){
-            Ball ball = new Ball(spawnX*sign*-1, dy*Constants.BALL_SPAWN_RADIUS);
+            Ball ball = new Ball(0,0);
             ball.thrust(new Point(targetX*sign, 0), Constants.BALL_SPAWN_SPEED);
             balls.add(ball);
-            dy = 1;
             sign = 1;
             ball.adjust();
         }
+
+        for(int i = 0; i < 2; i++){
+            Car car = players.get(0).Cars.get(i);
+            setRndLocation(car);
+            while(!isValidLocation(car)){
+                setRndLocation(car);
+            }
+
+            setOpposite(car, players.get(1).Cars.get(i));
+        }
+
+        Ball b = balls.get(0);
+        setRndLocation(b);
+        while(!isValidLocation(b)){
+            setRndLocation(b);
+        }
+        setOpposite(b, balls.get(1));
+    }
+
+    private void setRndLocation(Point point){
+        double angle = Constants.Random.nextDouble()*Math.PI*4;
+        int x = (int)(Math.cos(angle)*4000);
+        int y = (int)(Math.sin(angle)*4000);
+        point.x = x;
+        point.y = y;
+    }
+
+    private void setOpposite(Point point, Point target){
+        target.x = point.x*-1;
+        target.y = point.y*-1;
+    }
+
+    private boolean isValidLocation(Point point){
+        for(Car car : entities){
+            if(car == point) continue;
+            if(car.distance(point) < 1000) return false;
+        }
+
+        for(Ball ball : balls){
+            if(ball == point) continue;
+            if(ball.distance(point) < 1000) return false;
+        }
+
+        return true;
     }
 
     public boolean isGameOver(){
