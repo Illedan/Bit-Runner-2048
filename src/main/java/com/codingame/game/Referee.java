@@ -100,7 +100,7 @@ public class Referee extends AbstractReferee {
                     player.deactivate(String.format("$%d timeout!", player.getIndex()));
                     player.setScore(-1);
                 }else{
-                    gameManager.addTooltip(new Tooltip(player.getIndex(), String.format("$%d timeout, player has " + player.timeouts + " left before beeing disabled!", player.getIndex())));
+                    gameManager.addTooltip(new Tooltip(player.getIndex(), String.format("$%d timeout, player has " + player.timeouts + " round left before beeing disabled!", player.getIndex())));
                 }
             }
             catch (Exception e){
