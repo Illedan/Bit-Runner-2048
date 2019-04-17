@@ -1,4 +1,5 @@
 package com.codingame.game;
+import java.lang.ref.WeakReference;
 import java.util.*;
 
 import com.codingame.gameengine.core.AbstractPlayer.TimeoutException;
@@ -94,9 +95,13 @@ public class Referee extends AbstractReferee {
                     handleInput(player.Cars.get(i), outputs.get(i));
                 }
             } catch (TimeoutException e) {
-                player.deactivate(String.format("$%d timeout!", player.getIndex()));
                 gameManager.addToGameSummary(String.format("$%d timeout!", player.getIndex()));
-                player.setScore(-1);
+                if(player.timeouts-- <= 0){
+                    player.deactivate(String.format("$%d timeout!", player.getIndex()));
+                    player.setScore(-1);
+                }else{
+                    gameManager.addTooltip(new Tooltip(player.getIndex(), String.format("$%d timeout, player has " + player.timeouts + " left before beeing disabled!", player.getIndex())));
+                }
             }
             catch (Exception e){
                 player.deactivate(String.format("Invalid input"));
