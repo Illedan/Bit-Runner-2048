@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66a47f06-a862-4517-8b44-e1e11b160f04" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/Ball.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/Ball.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/Car.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/Car.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/Game.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/Game.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/config/statement_en.html" afterPath="$PROJECT_DIR$/config/statement_en.html.tpl" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/view/assets/.prisoner.png-autosave.kra" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/assets/.prisoner.png-autosave.kra" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/target/classes/view/demo.js" afterPath="$PROJECT_DIR$/target/classes/view/demo.js" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,29 +28,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Referee.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Referee.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="101" column="22" lean-forward="true" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
+            <state relative-caret-position="72">
+              <caret line="85" column="53" lean-forward="true" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="statement_en.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/statement_en.html">
+      <file leaf-file-name="stub.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/stub.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="209">
-              <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-              <folding>
-                <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="108">
+              <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ViewController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="199">
@@ -132,6 +130,8 @@
       <find>class car</find>
       <find>class col</find>
       <find>class ball</find>
+      <find>class play</find>
+      <find>referee</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -160,7 +160,6 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/test/java/UnitTests.java" />
         <option value="$PROJECT_DIR$/src/main/resources/view/demo.js" />
-        <option value="$PROJECT_DIR$/config/statement_en.html" />
         <option value="$PROJECT_DIR$/src/test/java/Agent1.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/Player.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java" />
@@ -168,6 +167,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/Game.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/Car.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/codingame/game/ViewController.java" />
+        <option value="$PROJECT_DIR$/config/statement_en.html" />
       </list>
     </option>
   </component>
@@ -510,6 +510,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="830" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -518,7 +519,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -552,7 +553,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/resources/view/assets/bumper.png" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/assets/car.png" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/assets/Elec3.png">
       <provider selected="true" editor-type-id="images">
@@ -771,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/stub.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/Boss.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-168">
@@ -808,16 +800,6 @@
         <state relative-caret-position="306">
           <caret line="1" column="411001" lean-forward="false" selection-start-line="1" selection-start-column="411001" selection-end-line="1" selection-end-column="411001" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/statement_en.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="21" column="24" lean-forward="true" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,14 +847,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="101" column="22" lean-forward="true" selection-start-line="101" selection-start-column="22" selection-end-line="101" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/view/assets/ballswap1.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -893,6 +867,38 @@
             <element signature="e#7418#7419#0" expanded="true" />
             <element signature="e#7454#7455#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/level5/statement_en.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/stub.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/statement_en.html.tpl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="260" column="58" lean-forward="false" selection-start-line="260" selection-start-column="58" selection-end-line="260" selection-end-column="58" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="85" column="53" lean-forward="true" selection-start-line="85" selection-start-column="53" selection-end-line="85" selection-end-column="53" />
+          <folding />
         </state>
       </provider>
     </entry>
