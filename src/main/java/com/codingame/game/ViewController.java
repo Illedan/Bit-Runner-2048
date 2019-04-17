@@ -59,6 +59,7 @@ public class ViewController {
         undeletableSprites.add(new ScoringLight());
         undeletableSprites.add(new ElectricFence());
         undeletableSprites.add(new CollisionIndicator());
+        undeletableSprites.add(new BallSwap());
 
         for(Player p : game.players){
             undeletableSprites.add(new PlayerHud(p));
@@ -137,6 +138,41 @@ public class ViewController {
                         graphicEntityModule.commitEntityState(Math.min(1.0, col.time), anim);
                     }
                 }
+            }
+        }
+
+        @Override
+        public boolean isRemoved() {
+            return false;
+        }
+    }
+
+    public class BallSwap extends ViewPart{
+
+        @Override
+        public void update() {
+            for(Ball.Ballswap b : game.ballswaps){
+                double angle = b.p1.getAngle(b.p2);
+                double length = b.p1.distance(b.p2);
+                int height = 64;
+                double scale = (length/height);
+                SpriteAnimation anim =
+                        graphicEntityModule.createSpriteAnimation()
+                                .setImages("ballswap1.png", "ballswap2.png", "ballswap1.png", "Empty.png")
+                                .setZIndex(15000)
+                                .setRotation(angle-Math.PI*0.5)
+                                .setScale(scale * sizeMulti)
+                                .setX(getScaled(b.p1.x))
+                                .setY(getScaled(b.p1.y))
+                                .setDuration(100)
+                                .setLoop(false)
+                                .setAlpha(1)
+                                //.setTint(0xb84e11)
+                                .setAnchorX(0.5);
+                playFieldGroup.add(anim);
+                graphicEntityModule.commitEntityState(Math.max(0.0, Math.min(1.0, b.time)-0.0001), playFieldGroup, anim);
+                anim.play();
+                graphicEntityModule.commitEntityState(Math.min(1.0, b.time), anim);
             }
         }
 
@@ -358,6 +394,7 @@ public class ViewController {
                 graphicEntityModule.commitEntityState(0, rotationGroup);
                 first = false;
             }
+
             double t = 0.0;
             for (Unit.UnitCollision c : model.collisions){
                 if(Math.abs(t-c.time) > Constants.EPSILON){
@@ -376,6 +413,7 @@ public class ViewController {
                         graphicEntityModule.commitEntityState(Math.min(1, c.time), ballGroup);
                     }
                 }
+
                 t = c.time;
             }
 
@@ -484,10 +522,10 @@ public class ViewController {
 
             //Avatar
             playerGroup.add(graphicEntityModule.createSprite()
-                    .setImage(model.getAvatarToken()).setAnchor(0.5).setBaseHeight(200).setBaseWidth(200).setY(50).setX(-50));
+                    .setImage(model.getAvatarToken()).setAnchor(0.5).setBaseHeight(200).setBaseWidth(200).setY(50).setX(-125));
 
             //Frame
-            playerGroup.add(graphicEntityModule.createRectangle().setWidth(200).setHeight(200).setX(-150)
+            playerGroup.add(graphicEntityModule.createRectangle().setWidth(200).setHeight(200).setX(-225)
                     .setY(-50).setLineWidth(10).setFillAlpha(0.0).setLineColor(model.getColorToken()));
 
             //Score
@@ -495,9 +533,9 @@ public class ViewController {
                     .createBitmapText()
                     .setFont("font")
                     .setText("0")
-                    .setFontSize(100)
+                    .setFontSize(130)
                     .setAnchor(0.5)
-                    .setY(50).setX(200));
+                    .setY(50).setX(125));
         }
 
         @Override

@@ -65,6 +65,9 @@ public class Car extends Unit {
         }
         else {
             Car other = (Car)u;
+            Ball currentBall = ball;
+            Ball otherBall = other.ball;
+
             double impulse = this.bounce(other);
             if(this.ball != null)
                 this.collisions.add(new UnitCollision(this.clonePoint(), getPoint(other, radius), game.t, BallState.Gained, impulse));
@@ -75,6 +78,10 @@ public class Car extends Unit {
                 other.collisions.add(new UnitCollision(other.clonePoint(), null, game.t, BallState.Gained, impulse));
             else
                 other.collisions.add(new UnitCollision(other.clonePoint(), null, game.t, BallState.Stolen, impulse));
+
+            if(currentBall != ball){
+                game.ballswaps.add(new Ball.Ballswap(this.clonePoint(), other.clonePoint(), game.t));
+            }
         }
     }
 }

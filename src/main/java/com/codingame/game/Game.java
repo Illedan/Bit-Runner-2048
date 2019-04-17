@@ -13,6 +13,7 @@ public class Game {
     public ArrayList<Unit.UnitCollision> wallCollisions = new ArrayList<>();
     public ArrayList<Collision> allOccuringCollisions = new ArrayList<>();
     public ArrayList<Integer> scorings = new ArrayList<>();
+    public ArrayList<Ball.Ballswap> ballswaps = new ArrayList<>();
     public double t;
     public int turn;
 
@@ -230,6 +231,7 @@ public class Game {
         wallCollisions.clear();
         scorings.clear();
         allOccuringCollisions.clear();
+        ballswaps.clear();
 
         for(Unit e : entities){
             e.beforeRound();

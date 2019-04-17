@@ -25,4 +25,15 @@ public class Ball extends Unit {
         captured = true;
         ((Car)u).ball = this;
     }
+
+    public static class Ballswap{
+        public Point p1;
+        public Point p2;
+        public double time;
+        public Ballswap(Point p1, Point p2, double time){
+            this.p1 = p1;
+            this.p2 = p2;
+            this.time = time;
+        }
+    }
 }
