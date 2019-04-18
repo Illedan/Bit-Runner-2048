@@ -197,7 +197,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
         </h1>
         <!-- Protocol block -->
         <div class="blk">
-            <div class="title">Initializaton input</div>
+            <div class="title">Initialization input</div>
             <div class="text">
                 <span class="statement-lineno">Line 1</span>: one integer <var>mapRadius</var>, the radius of the map.
                 <br>
@@ -235,7 +235,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
                     <li>
                         <const>1</const> for an opposing Car</li>
                     <li>
-                        <const>2</const> for a Prisoner that is not beeing held by a Car.
+                        <const>2</const> for a Prisoner that is not being held by a Car.
                     </li>
                 </ul>
                 <var>x</var>, <var>y</var> for the entity's position.
@@ -261,7 +261,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
             <br> <const>0</const>: man hole
             <br> <const>other values</const>: entityId of the Car or Prisoner
             <br>
-            <span class="statement-lineno">Alernative output format</span>
+            <span class="statement-lineno">Alternative output format</span>
             <br> For convenience purposes, you may also output your actions in the following format: <action>EXPERT rotationAngle thrust message</action>.
             </div>
         </div>
