@@ -16,22 +16,34 @@
             Summary
         </p>
         <span class="statement-league-alert-content">
-            Made by Illedan, pb4 and Agade!<br>
+            Made by Illedan, pb4 and Agade!<br><br>
             <!-- BEGIN level1 -->
-Welcome to Bit Runner 2048! Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents. <br>
-The rules of the game will not be introduced gradually: you are playing the full game from the beginning! Good luck!
+Welcome to Bit Runner 2048!
+<br>
+<br>Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents.
+<br>The rules of the game will not be introduced gradually: you are playing the full game from the beginning!
+<br>
+<br>Good luck!
             <!-- END -->
             <!-- BEGIN level2 -->
-Welcome to Bronze!
+Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents.
+<br>
+<br>Welcome to Bronze!
             <!-- END -->
             <!-- BEGIN level3 -->
-Welcome to Silver!
+Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents.
+<br>
+<br>Welcome to Silver!
             <!-- END -->
             <!-- BEGIN level4 -->
-Welcome to Gold!
+Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents.
+<br>
+<br>Welcome to Gold!
             <!-- END -->
             <!-- BEGIN level5 -->
-Welcome to Legend!
+Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents.
+<br>
+<br>Welcome to Legend!
             <!-- END -->
         </span>
     </div>
@@ -40,7 +52,7 @@ Welcome to Legend!
     <div class="statement-section statement-goal">
     
         <p>
-        <strong>Winners of the contest will have their with nick and avatar displayed in this section!</strong> <br>
+        <strong>Winners of the contest will have their nick and avatar displayed in this section!</strong> <br>
         Contest lasts until 12th of May, 5PM UTC! See <a href="https://www.codingame.com/forum/t/announcement-first-unofficial-cg-contest/98111">rules on the forum.</a>
         </p>
     
@@ -61,7 +73,8 @@ Welcome to Legend!
         <div>
             <div class="statement-rules-content">
                 Two players face off in a circular map. <br>
-                Each player controls <var>carCount</var> cars. To deliver a prisoner, the player must use the cars to drop a Prisoner into the manhole.
+                Each player controls <const>2</const> cars. Cars are used to pick-up prisoners, and put them in solitary confinement.
+                <br>
                 <br>
                 <p style="text-align:center"><strong>The Map</strong></p>
                 The playing field is a Prison yard, represented with a circle of radius
@@ -88,7 +101,7 @@ Welcome to Legend!
                 <br>
                 <p style="text-align:center"><strong>Game mechanics</strong></p>
                 <strong>To score one point</strong>, a Player must drop a prisoner into the man hole.
-                <br> A new Prisoner will be appear on the edge of prison yard. <const>2</const> Prisoners are always around trying to escape.
+                <br> A new Prisoner will appear on the edge of the prison yard. <const>2</const> Prisoners are always around trying to escape.
                 <br>
                 <br>
                 <strong>To move a car</strong>, you must print the <strong>X Y coordinates of a target destination</strong> and a <strong>thrust</strong> between
@@ -97,8 +110,7 @@ Welcome to Legend!
                 The Car will pivot towards the destination, by a maximum of <const>18</const> degrees. <br>
                 It will then apply thrust in that direction. Careful, the faster a Car goes, the harder it is to control!
                 <br>
-                <br> It is impossible to leave the prison yard. Cars and Prisoners will rebound off the electric fence on the edge of the yard. Beware, Cars are propelled with surprising strength because of their magnetic features!
-                <br> Prisoners can only be captured if carried by a car.
+                <br> It is impossible to leave the prison yard. Cars and Prisoners will bounce off the electric fence on the edge of the yard. <strong>Beware, Cars with rebound with surprising momentum!</strong>
                 <br> Collisions occur between the pairs: Car-Car, Car-Fence, Prisoner-Fence.
                 <br>
                 <br>
@@ -149,10 +161,10 @@ Welcome to Legend!
         <div class="statement-expert-rules-content">
             <ul style="margin: 0;">
                 <p>
-                    You can see the game's source code here: <a href="https://github.com/Illedan/Bit-Runner-2048">https://github.com/Illedan/Bit-Runner-2048</a>
+                    You can find the game's source code on Github: <a href="https://github.com/Illedan/Bit-Runner-2048">https://github.com/Illedan/Bit-Runner-2048</a>
                 </p>
                 <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
-                <li>To deliver a Prisoner, the Car must have grabbed a Prisoner and the distance between the man hole and the Car and the center of the man hole must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
+                <li>To score one point, the Car must have grabbed a Prisoner and the distance between the man hole and the Car's center point must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
                 <li>Collisions are (nearly) elastic. A minimal impulse of
                     <const>120</const> is applied for Car-Car collisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Fence collisions</li>
                 <li>Cars have a mass of <const>1</const> unit.
@@ -171,8 +183,8 @@ Welcome to Legend!
                     <br>
                     <const>1.0</const> for Prisoners
                 </li>
-                <li>The position's values are truncated.</li>
-                <li>The Car's heading angle is expressed in degrees and rounded.</li>
+                <li>The position values are truncated.</li>
+                <li>The cars' heading angle is expressed in degrees and rounded.</li>
             </ol>
             Angle are provided in degrees, and relative to the x axis.
         </div>
@@ -263,7 +275,7 @@ Welcome to Legend!
                 <br><const>4000</const> <= <var>mapRadius</var> <= <const>6000</const>
                 <br><const>500</const> <= <var>centerRadius</var> <= <const>1000</const>
                 <br><const>250</const> <= <var>minSwapImpulse</var> <= <const>350</const>
-                <br><var>carCount</var> = <const>2</carCount>
+                <br><var>carCount</var> = <const>2</const>
                 <br> Response time for the first turn ≤ <const>1000</const> ms
                 <br> Response time per turn ≤ <const>50</const> ms
                 <br>
