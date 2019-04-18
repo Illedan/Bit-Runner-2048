@@ -164,7 +164,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
                     You can find the game's source code on Github: <a href="https://github.com/Illedan/Bit-Runner-2048">https://github.com/Illedan/Bit-Runner-2048</a>
                 </p>
                 <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
-                <li>To score one point, the Car must have grabbed a Prisoner and the distance between the man hole and the Car's center point must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
+                <li>To score one point, the Car must have grabbed a Prisoner and the distance between the man hole and the Car's center point must be less than or equal to the <strong>Man hole's radius - 1</strong>. A new Prisoner will be spawned <const>4000</const> units away from the man hole, behind the car which scored the point (see referee for implementation details).</li>
                 <li>Collisions are (nearly) elastic. A minimal impulse of
                     <const>120</const> is applied for Car-Car collisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Fence collisions</li>
                 <li>Cars have a mass of <const>1</const> unit.
