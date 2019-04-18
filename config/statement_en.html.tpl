@@ -291,5 +291,4 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
         </div>
     </div>
 </div>
-<!-- END -->
 </div>

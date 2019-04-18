@@ -21,13 +21,14 @@ Welcome to Gold!
         </span>
     </div>
 
-    <p>
-        <strong>Winners of the contest will be placed with nick + avatar in this section on contest end!</strong> <br>
-        Contest lasts until 12th of may, 5PM UTC!
-    </p>
-
     <!-- GOAL -->
     <div class="statement-section statement-goal">
+    
+        <p>
+        <strong>Winners of the contest will have their with nick and avatar displayed in this section!</strong> <br>
+        Contest lasts until 12th of May, 5PM UTC! See <a href="https://www.codingame.com/forum/t/announcement-first-unofficial-cg-contest/98111">rules on the forum.</a>
+        </p>
+    
         <h1> 
           <span class="icon icon-goal">&nbsp;</span> 
           <span>The Goal</span> 
@@ -46,7 +47,8 @@ Welcome to Gold!
             <div class="statement-rules-content">
                 Two players face off in a circular map. <br>
                 Each player controls <var>carCount</var> cars. To deliver a prisoner, the player must use the cars to drop a Prisoner into the manhole.
-                <p style="text-align:center"><strong>The map</strong></p>
+                <br>
+                <p style="text-align:center"><strong>The Map</strong></p>
                 The playing field is a Prison yard, represented with a circle of radius
                 <var>mapRadius</var> units. The coordinates
                 <const>X=0, Y=0</const> represent the point at <strong>the center</strong>.
@@ -63,17 +65,15 @@ Welcome to Gold!
                 <br>
                 <br>
                 <p style="text-align:center"><strong>The Cars</strong></p>
-                Each player controls
-                <var>carCount</var> cars.
-                <br> A Car is a disc with a radius of
+                A Car is a disc of radius 
                 <const>400</const> units. 
-                <br> <strong>Cars generate a magnetic field, which seizes control of prisoners' escape pods when the distance between them is lower than the Car's radius.</strong>
+                <br> <strong>Cars generate a magnetic field, which allows them to grab the prisoners' escape pods when they are separated by a distance lower than the Car's radius.</strong>
                 <br> Cars glide on the playing field and are subject to friction.
                 <br>
                 <br>
                 <p style="text-align:center"><strong>Game mechanics</strong></p>
-                <strong>To capture a prisoner</strong>, a Player must drop him into the man hole.
-                <br> A new Prisoner will be trying to escape on the edge of prison yard. <const>2</const> Prisoners are always around trying to escape.
+                <strong>To score one point</strong>, a Player must drop a prisoner into the man hole.
+                <br> A new Prisoner will be appear on the edge of prison yard. <const>2</const> Prisoners are always around trying to escape.
                 <br>
                 <br>
                 <strong>To move a car</strong>, you must print the <strong>X Y coordinates of a target destination</strong> and a <strong>thrust</strong> between
@@ -116,8 +116,7 @@ Welcome to Gold!
                     <div class="title">Lose Conditions</div>
                     <div class="text">
                         <ul>
-                            <li>Capture less prisoners than your enemy.</li>
-                            <li>Capture your last prisoners last, in case of a draw</li>
+                            <li>Your opponent wins.</li>
                             <li>Your program does not provide output in time.</li>
                             <li>Your program provides invalid output.</li>
                         </ul>
@@ -140,7 +139,7 @@ Welcome to Gold!
                 <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
                 <li>To deliver a Prisoner, the Car must have grabbed a Prisoner and the distance between the man hole and the Car and the center of the man hole must be less than or equal to the <strong>Man hole's radius - 1</strong>.</li>
                 <li>Collisions are (nearly) elastic. A minimal impulse of
-                    <const>120</const> is applied for Car-Carcollisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Border collisions</li>
+                    <const>120</const> is applied for Car-Car collisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Fence collisions</li>
                 <li>Cars have a mass of <const>1</const> unit.
                 </li>
             </ul>
@@ -228,14 +227,15 @@ Welcome to Gold!
             <div class="text"><span class="statement-lineno">One line for each one of your team's Cars</span>: three integers <var>X</var>, <var>Y</var> and <var>thrust</var>
             <br> You may append the output with a message which we be displayed above the corresponding pod.
             <br>
-            <br> If the message is "debug" once, the game summary will contain additional information throughout the game. The referee will provide the list of collision events during the last turn, presented in the following manner: <var>id1</var> <var>id2</var> <var>time</var>.
+            <span class="statement-lineno">Additional debugging information</span>
+            <br> If the message is <action>debug</action> once, the game summary will contain additional information throughout the game. The referee will provide the list of collision events during the last turn, presented in the following manner: <var>id1</var> <var>id2</var> <var>time</var>.
             <br> <var>id</var> shall be interpreted as:
             <br> <const>-1</const>: map border
             <br> <const>0</const>: man hole
             <br> <const>other values</const>: entityId of the Car or Prisoner
             <br>
-            <br> To drive like an expert, use: <action>EXPERT angle thrust message</action>.
-            <br> <const>-18</const> <= <var>angle</var> <= <const>18</const>
+            <span class="statement-lineno">Alernative output format</span>
+            <br> For convenience purposes, you may also output your actions in the following format: <action>EXPERT rotationAngle thrust message</action>.
             </div>
         </div>
 
@@ -247,7 +247,8 @@ Welcome to Gold!
                 <br> <var>entityId</var> >= <const>0</const>
                 <br><const>4000</const> <= <var>mapRadius</var> <= <const>6000</const>
                 <br><const>500</const> <= <var>centerRadius</var> <= <const>1000</const>
-                <br><const>250</const> <= <var>minSwapImpulse</var> <= <const>350</const>     
+                <br><const>250</const> <= <var>minSwapImpulse</var> <= <const>350</const>
+                <br><var>carCount</var> = <const>2</carCount>
                 <br> Response time for the first turn ≤ <const>1000</const> ms
                 <br> Response time per turn ≤ <const>50</const> ms
                 <br>
@@ -262,4 +263,5 @@ Welcome to Gold!
             <div class="story-text"></div>
         </div>
     </div>
+</div>
 </div>
