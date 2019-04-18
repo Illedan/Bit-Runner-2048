@@ -19,7 +19,7 @@
             Made by Illedan, pb4 and Agade!<br>
             <!-- BEGIN level1 -->
 Welcome to Bit Runner 2048! Since community games do not feature silver/gold/legend leagues, we will use wood leagues as equivalents. <br>
-The rules of the games will not be introduced gradually: you are playing the full game from the beginning! Good luck!
+The rules of the game will not be introduced gradually: you are playing the full game from the beginning! Good luck!
             <!-- END -->
             <!-- BEGIN level2 -->
 Welcome to Bronze!
