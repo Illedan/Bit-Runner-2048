@@ -8,7 +8,7 @@ public class Constants {
 
     public static int GLOBAL_ID = 0;
 
-    public static int MAP_RADIUS = 5000;
+    public static int MAP_RADIUS = 5000;           // Randomized in setupValues()
 
     public static final int MAX_GOALS = 10;
 
@@ -34,10 +34,10 @@ public class Constants {
     public static int CAR_MAX_THRUST = 200;
     public static final int MASS = 1;
     public static int NUM_CARS = 2;
-    public static int BALL_LOSE_MIN_IMPULSE = 300;
+    public static int BALL_LOSE_MIN_IMPULSE = 300;  // Randomized in setupValues()
 
     // Center
-    public static int CENTER_RADIUS = 800;
+    public static int CENTER_RADIUS = 800;          // Randomized in setupValues()
     public static Point CENTER = new Point(0,0);
 
     public static void setupValues(){
