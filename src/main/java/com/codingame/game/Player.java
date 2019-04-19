@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class Player extends AbstractMultiplayerPlayer {
     public ArrayList<Car> Cars = new ArrayList<>();
     public double lastScored;
-    public int timeouts = 2;
+
     @Override
     public int getExpectedOutputLines() {
         return Cars.size();
