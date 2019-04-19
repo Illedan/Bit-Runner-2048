@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="66a47f06-a862-4517-8b44-e1e11b160f04" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/Player.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/Player.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java" afterPath="$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -18,8 +17,8 @@
       <file leaf-file-name="Referee.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="100" column="13" lean-forward="true" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+            <state relative-caret-position="243">
+              <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
               <folding />
             </state>
           </provider>
@@ -917,8 +916,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/codingame/game/Referee.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="100" column="13" lean-forward="true" selection-start-line="100" selection-start-column="13" selection-end-line="100" selection-end-column="13" />
+        <state relative-caret-position="243">
+          <caret line="35" column="8" lean-forward="false" selection-start-line="35" selection-start-column="8" selection-end-line="35" selection-end-column="8" />
           <folding />
         </state>
       </provider>
