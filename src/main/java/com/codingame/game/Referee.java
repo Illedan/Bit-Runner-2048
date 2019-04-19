@@ -28,6 +28,7 @@ public class Referee extends AbstractReferee {
     public void init() {
         Properties params = gameManager.getGameParameters();
         Constants.Random = new Random(getSeed(params));
+        Constants.setupValues();
 
         gameManager.setMaxTurns(250);
         gameManager.setFrameDuration(228);

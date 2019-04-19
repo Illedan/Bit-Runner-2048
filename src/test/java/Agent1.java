@@ -8,7 +8,7 @@ public class Agent1 {
         Scanner scanner = new Scanner(System.in);
         int rad2 = Integer.parseInt(scanner.nextLine());
         int rad1 = Integer.parseInt(scanner.nextLine());
-        double impulse = Double.parseDouble(scanner.nextLine());
+        int impulse = Integer.parseInt(scanner.nextLine());
         int cars = Integer.parseInt(scanner.nextLine());
         System.err.println("RAD0:" + rad2 + " RAD1:" + rad1 + " IMPULSE: " + impulse);
         while (true) {

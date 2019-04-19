@@ -8,7 +8,7 @@ public class Constants {
 
     public static int GLOBAL_ID = 0;
 
-    public static final int MAP_RADIUS = 5000;
+    public static int MAP_RADIUS = 5000;
 
     public static final int MAX_GOALS = 10;
 
@@ -16,7 +16,6 @@ public class Constants {
     public static final int BALL_SPAWN_RADIUS = 4000;
     public static final int BALL_SPAWN_SPEED = 300;
     public static final double BALL_FRICTION = 0.0;
-    public static final int BALL_LOSE_MIN_IMPULSE = 300;
     public static final double BORDER_BALL_MIN_IMPULSE = 42;
     public static final int BALL_RADIUS = 100;
     public static final int NUM_BALLS = 2;
@@ -35,8 +34,15 @@ public class Constants {
     public static int CAR_MAX_THRUST = 200;
     public static final int MASS = 1;
     public static int NUM_CARS = 2;
+    public static int BALL_LOSE_MIN_IMPULSE = 300;
 
     // Center
-    public static final int CENTER_RADIUS = 800;
+    public static int CENTER_RADIUS = 800;
     public static Point CENTER = new Point(0,0);
+
+    public static void setupValues(){
+        BALL_LOSE_MIN_IMPULSE = Random.nextInt(11)+295;
+        MAP_RADIUS = Random.nextInt(3)+4999;
+        CENTER_RADIUS = Random.nextInt(21)+790;
+    }
 }

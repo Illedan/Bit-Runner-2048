@@ -435,11 +435,11 @@ public class ViewController {
             }
 
             Map<String, Object> params = new HashMap<>();
-            params.put("carX", model.x);
-            params.put("carY", model.y);
+            params.put("CarX", model.x);
+            params.put("CarY", model.y);
             params.put("Vx", model.vx);
             params.put("Vy", model.vy);
-            params.put("Angle", Math.toDegrees(model.angle));
+            params.put("Angle", Math.round(Math.toDegrees(model.angle)));
             if(model.ball != null){
                 params.put("BallId", model.ball.id);
             }
