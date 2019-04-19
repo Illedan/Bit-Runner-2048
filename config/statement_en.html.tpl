@@ -53,7 +53,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
     
         <p>
         <strong>Winners of the contest will have their nick and avatar displayed in this section!</strong> <br>
-        Contest lasts until 12th of May, 5PM UTC! See <a href="https://www.codingame.com/forum/t/announcement-first-unofficial-cg-contest/98111">rules on the forum.</a>
+        Contest lasts until 12th of May, 5PM UTC! See <a href="https://www.codingame.com/forum/t/announcement-first-unofficial-cg-contest/98111">rules on the forum.</a><br>
         </p>
     
         <h1> 
@@ -110,7 +110,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
                 The Car will pivot towards the destination, by a maximum of <const>18</const> degrees. <br>
                 It will then apply thrust in that direction. Careful, the faster a Car goes, the harder it is to control!
                 <br>
-                <br> It is impossible to leave the prison yard. Cars and Prisoners will bounce off the electric fence on the edge of the yard. <strong>Beware, Cars with rebound with surprising momentum!</strong>
+                <br> It is impossible to leave the prison yard. Cars and Prisoners will bounce off the electric fence on the edge of the yard. <strong>Beware, Cars will rebound with surprising momentum!</strong>
                 <br> Collisions occur between the pairs: Car-Car, Car-Fence, Prisoner-Fence.
                 <br>
                 <br>
@@ -163,7 +163,7 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
                 <p>
                     You can find the game's source code on Github: <a href="https://github.com/Illedan/Bit-Runner-2048">https://github.com/Illedan/Bit-Runner-2048</a>
                 </p>
-                <li>To grab a Prisoner, the distance between the center of the Car and the center Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
+                <li>To grab a Prisoner, the distance between the center of the Car and the center of the Prisoner must be less than or equal to the <strong>Car's radius - 1</strong>.</li>
                 <li>To score one point, the Car must have grabbed a Prisoner and the distance between the man hole and the Car's center point must be less than or equal to the <strong>Man hole's radius - 1</strong>. A new Prisoner will be spawned <const>4000</const> units away from the man hole.</li>
                 <li>Collisions are (nearly) elastic. A minimal impulse of
                     <const>120</const> is applied for Car-Car collisions, <const>600</const> for Car-Fence collisions and <const>42</const> for Prisoner-Fence collisions</li>
@@ -254,12 +254,14 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
             <div class="text"><span class="statement-lineno">One line for each one of your team's Cars</span>: three integers <var>X</var>, <var>Y</var> and <var>thrust</var>
             <br> You may append the output with a message which we be displayed above the corresponding pod.
             <br>
-            <span class="statement-lineno">Additional debugging information</span>
+            <br>
+            <span class="statement-lineno">Optional debugging information</span>
             <br> If the message is <action>debug</action> once, the game summary will contain additional information throughout the game. The referee will provide the list of collision events during the last turn, presented in the following manner: <var>id1</var> <var>id2</var> <var>time</var>.
             <br> <var>id</var> shall be interpreted as:
             <br> <const>-1</const>: map border
             <br> <const>0</const>: man hole
             <br> <const>other values</const>: entityId of the Car or Prisoner
+            <br>
             <br>
             <span class="statement-lineno">Alternative output format</span>
             <br> For convenience purposes, you may also output your actions in the following format: <action>EXPERT rotationAngle thrust message</action>.
