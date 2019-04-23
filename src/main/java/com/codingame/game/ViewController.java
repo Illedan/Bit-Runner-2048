@@ -106,8 +106,37 @@ public class ViewController {
     }
 
     public class CollisionIndicator extends ViewPart{
+        private ArrayList<SpriteAnimation>[] playingAnims;
+        private ArrayList<SpriteAnimation> freeAnims = new ArrayList<>();
+        public CollisionIndicator(){
+            playingAnims = new ArrayList[3];
+            for(int i = 0;i < 3; i++){
+                playingAnims[i] = new ArrayList<>();
+            }
+
+            for(int i = 0; i < 20; i++){
+                SpriteAnimation anim = graphicEntityModule.createSpriteAnimation()
+                        .setImages("flash00.png", "flash01.png", "flash02.png","flash03.png", "Empty.png")
+                        .setX(-1000)
+                        .setY(-1000)
+                        .setDuration(150)
+                        .setLoop(false)
+                        .setScale(0.15)
+                        .setAnchor(0.5)
+                        .setAlpha(0.0, Curve.IMMEDIATE);
+                playFieldGroup.add(anim);
+                freeAnims.add(anim);
+            }
+        }
         @Override
         public void update() {
+            freeAnims.addAll(playingAnims[0]);
+            playingAnims[0].clear();
+            ArrayList<SpriteAnimation> temp = playingAnims[0];
+            playingAnims[0] = playingAnims[1];
+            playingAnims[1] = playingAnims[2];
+            playingAnims[2] = temp;
+
             for(Car c : game.entities){
                 for(Unit.UnitCollision col : c.collisions){
                     if(col.targetPosition != null && col.impulse > Constants.MIN_IMPULSE){
@@ -121,21 +150,22 @@ public class ViewController {
                         else if(col.impulse > Constants.BALL_LOSE_MIN_IMPULSE-100){
                             color = 0xb3ac98;
                         }
-                        double scale = Math.min(1.5,col.impulse/Constants.BALL_LOSE_MIN_IMPULSE) * 0.15;
 
-                        SpriteAnimation anim = graphicEntityModule.createSpriteAnimation()
-                                .setImages("flash00.png", "flash01.png", "flash02.png","flash03.png", "Empty.png")
-                                .setX(getScaled(col.targetPosition.x))
-                                .setY(getScaled(col.targetPosition.y))
-                                .setDuration(150)
+                        double scale = Math.min(1.5,col.impulse/Constants.BALL_LOSE_MIN_IMPULSE) * 0.15;
+                        if(freeAnims.size() == 0) break;
+                        SpriteAnimation anim = freeAnims.get(freeAnims.size()-1);
+                        freeAnims.remove(freeAnims.size()-1);
+                        anim.setX(getScaled(col.targetPosition.x), Curve.IMMEDIATE)
+                                .setY(getScaled(col.targetPosition.y), Curve.IMMEDIATE)
                                 .setTint(color)
-                                .setLoop(false)
-                                .setScale(scale)
-                                .setAnchor(0.5);
-                        playFieldGroup.add(anim);
-                        graphicEntityModule.commitEntityState(Math.max(0.0, Math.min(1.0, col.time)-0.0001), playFieldGroup, anim);
+                                .setScale(scale, Curve.IMMEDIATE)
+                                .setAlpha(1.0, Curve.IMMEDIATE);
+                        graphicEntityModule.commitEntityState(Math.min(1.0, Math.max(0.0, col.time-0.001)), anim);
+
+                        anim.reset();
                         anim.play();
                         graphicEntityModule.commitEntityState(Math.min(1.0, col.time), anim);
+                        playingAnims[2].add(anim);
                     }
                 }
             }
@@ -441,7 +471,7 @@ public class ViewController {
             params.put("Vy", model.vy);
             params.put("Angle", Math.round(Math.toDegrees(model.angle)));
             if(model.ball != null){
-                params.put("BallId", model.ball.id);
+                params.put("PrisonerId", model.ball.id);
             }
             tooltipModule.updateExtraTooltipText(cargroup, createToolTip(params));
         }

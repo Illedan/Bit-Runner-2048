@@ -46,7 +46,6 @@ public class Agent1 {
                 if(target.distance(car) < 500) thrust = 10;
                 System.out.println(target.X + " " + target.Y + " " + thrust + " " + s);
             }
-
         }
     }
 

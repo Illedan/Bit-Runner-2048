@@ -207,7 +207,7 @@ public class Referee extends AbstractReferee {
     private void handleInput(Car car, String input) throws Exception{
         String[] splitted = input.split(" ");
 
-        if(input.startsWith("EXPERT")){
+        if(splitted[0].equals("EXPERT")){
             int angle = Integer.parseInt(splitted[1]);
             int thrust = Integer.parseInt(splitted[2]);
             if(thrust < 0 || thrust > Constants.CAR_MAX_THRUST) {

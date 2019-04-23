@@ -41,8 +41,8 @@ public class Constants {
     public static Point CENTER = new Point(0,0);
 
     public static void setupValues(){
-        BALL_LOSE_MIN_IMPULSE = Random.nextInt(11)+295;
-        MAP_RADIUS = Random.nextInt(3)+4999;
-        CENTER_RADIUS = Random.nextInt(21)+790;
+      //  BALL_LOSE_MIN_IMPULSE = Random.nextInt(11)+295;
+      //  MAP_RADIUS = Random.nextInt(3)+4999;
+      //  CENTER_RADIUS = Random.nextInt(21)+790;
     }
 }
