@@ -30,7 +30,7 @@ public class Referee extends AbstractReferee {
         Constants.Random = new Random(getSeed(params));
         Constants.setupValues();
 
-        gameManager.setMaxTurns(250);
+        gameManager.setMaxTurns(Constants.ShowWinners?50: 250);
         gameManager.setFrameDuration(228);
         gameManager.setTurnMaxTime(50);
 

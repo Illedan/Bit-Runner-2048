@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class Constants {
 
+    public static boolean ShowWinners = false;
+
     public static Random Random;
 
     public static int GLOBAL_ID = 0;

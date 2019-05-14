@@ -36,6 +36,7 @@ public class ViewController {
     }
 
     public void Init(){
+        boolean drawWinner = Constants.ShowWinners;
         graphicEntityModule.createRectangle().setFillColor(0x000000).setWidth(1920).setHeight(1080).setZIndex(-11);
         playFieldGroup = graphicEntityModule.createGroup()
                 .setX(getScaled(X0))
@@ -61,8 +62,12 @@ public class ViewController {
         undeletableSprites.add(new CollisionIndicator());
         undeletableSprites.add(new BallSwap());
 
+        if(drawWinner)
+            DrawWinners();
+
         for(Player p : game.players){
-            undeletableSprites.add(new PlayerHud(p));
+            if(!drawWinner)
+                undeletableSprites.add(new PlayerHud(p));
             for(Car c : p.Cars){
                 sprites.put(c, new CarSprite(c, p));
             }
@@ -71,6 +76,35 @@ public class ViewController {
         for (Ball b : game.balls){
             sprites.put(b, new BallSprite(b));
         }
+    }
+
+    private void DrawWinners(){
+        int centerY = 1080/2;
+        int y = centerY/2;
+
+        Group playerGroup = graphicEntityModule.createGroup().setX(420).setY(y);
+        int x = -150;
+        playerGroup.add(graphicEntityModule.createBitmapText().setText("Illedan & pb4").setFont("font")
+                .setAnchorX(0.5).setAnchorY(1).setY(-120).setX(0).setFontSize(50));
+        playerGroup.add(graphicEntityModule.createLine().setX(-350).setX2(350).setY(-115).setY2(-115).setLineColor(game.players.get(0).getColorToken()).setLineWidth(10));
+
+
+        for(Player model: game.players){
+            playerGroup.add(graphicEntityModule.createSprite()
+                    .setImage(model.getAvatarToken()).setAnchor(0.5).setBaseHeight(200).setBaseWidth(200).setY(50).setX(x));
+
+            //Frame
+           // playerGroup.add(graphicEntityModule.createRectangle().setWidth(200).setHeight(200).setX(-225+x)
+            //        .setY(-50).setLineWidth(10).setFillAlpha(0.0).setLineColor(model.getColorToken()));
+            x += 300;
+        }
+        int winnerY = centerY-120;
+        playerGroup.add(graphicEntityModule.createBitmapText().setText("Contest podium").setFont("font")
+                .setAnchorX(0.5).setAnchorY(1).setY(winnerY).setX(0).setFontSize(50));
+        playerGroup.add(graphicEntityModule.createLine().setX(-350).setX2(350).setY(winnerY+5).setY2(winnerY+5).setLineColor(game.players.get(1).getColorToken()).setLineWidth(10));
+
+
+        graphicEntityModule.createSprite().setImage("winner.png").setScale(1.2).setAnchorX(0.5).setX(420).setAnchorY(1).setY(centerY*2).setZIndex(200);
     }
 
     public void update(){

@@ -52,9 +52,11 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
     <div class="statement-section statement-goal">
     
         <p>
-        <strong>Winners of the contest will have their nick and avatar displayed in this section!</strong> <br>
-        Contest lasts until 12th of May, 5PM UTC! See <a href="https://www.codingame.com/forum/t/announcement-first-unofficial-cg-contest/98111">rules on the forum.</a><br>
+        <strong>Winners of the contest, lasting from 19th of April to 12th of May 2019, are: reCurse, Neumann and RoboStac!</strong>
         </p>
+
+        <img src="https://i.imgur.com/ex8vdBy.png" style="border-radius: 5px;">
+        <br>
     
         <h1> 
           <span class="icon icon-goal">&nbsp;</span> 
@@ -283,13 +285,6 @@ Since community games do not feature silver/gold/legend leagues, we will use woo
                 <br>
                 <br> <i>Note that the current referee uses a lower range of mapRadius, centerRadius and minSwapImpulse values than stated above. Creators of the puzzle reserve the right to update the referee with new numerical values, insofar as they remain within the bounds provided in this statement.</i>
             </div>
-        </div>
-    </div>
-    <!-- STORY -->
-    <div class="statement-story-background">
-        <div class="statement-story" style="min-height: 300px; position: relative">
-            <h1></h1>
-            <div class="story-text"></div>
         </div>
     </div>
 </div>
